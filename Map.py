@@ -39,7 +39,7 @@ lastend = 0
 previousoffset = False
 
 for (k, v) in data.items():
-    offset = .01001 if v['start'] < lastend and previousoffset else .01
+    offset = 0 if v['start'] < lastend and previousoffset else 0
     previousoffset = offset == .01
     print(v['start'])
     print(lastend)
