@@ -33,7 +33,7 @@ def add_bg_circle(ax):
     ax.text(0.0, 1.15, "0", ha="center", va="center")
 
 
-add_bg_circle(ax)
+#add_bg_circle(ax)
 
 ## plot the line segments:
 for (k, v) in data.items():
