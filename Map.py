@@ -1,7 +1,7 @@
 import os
 import matplotlib.transforms
 import numpy as np
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plt
 from parse import parse, get_source
 
 features = parse("Genome.gb")
@@ -27,8 +27,8 @@ print()
 print(source)
 print(len(source))
 
-fig = plot.figure()
-ax = plot.subplot(111, projection='polar')
+fig = plt.figure()
+ax = plt.subplot(111, projection='polar')
 ax.set_theta_direction(-1)
 ax.set_theta_zero_location('N')
 r = np.arange(0, 1, 0.001)
@@ -50,7 +50,8 @@ for (k, v) in data.items():
     lastend = v['end']
     dist = 1.0+offset
     ys = np.array([(dist) for x in xs])
-    ax.plot(xs, ys, linewidth=3, label=v['name'])
+    p = ax.plot(xs, ys, linewidth=3, label=v['name'])
+    ax.arrow(xs[100], ys[100], xs[105]-xs[100], ys[105]-ys[100], fc='k', ec='k', head_width=.1, head_length=.1)
 
 # ax.annotate('annotation',
 #             xy=(0, 1),
@@ -70,5 +71,5 @@ for label in ax.yaxis.get_majorticklabels():
 
 ax.legend(loc='lower left', bbox_to_anchor=(-.2, 0))
 ax.spines['polar'].set_visible(False)
-plot.title('Tomato curly stunt virus, complete genome', loc='center', pad=10)
-plot.show()
+plt.title('Tomato curly stunt virus, complete genome', loc='center', pad=10)
+plt.show()

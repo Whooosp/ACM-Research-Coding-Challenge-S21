@@ -24,11 +24,11 @@ def add_bg_circle(ax):
     # the circle
     circle_x = np.linspace(0, 2 * np.pi, 200)
     circle_y = np.array([1.0 for x in circle_x])
-    ax.plot(circle_x, circle_y, c="k", linewidth=LW)
+    ax.plt(circle_x, circle_y, c="k", linewidth=LW)
     # the top notch
     line_y = np.linspace(1.0, 1.1)  ## change length of the top line here
     line_x = np.array([0 for y in line_y])
-    ax.plot(line_x, line_y, c="k", linewidth=LW)
+    ax.plt(line_x, line_y, c="k", linewidth=LW)
     # the text
     ax.text(0.0, 1.15, "0", ha="center", va="center")
 
@@ -40,7 +40,7 @@ for (k, v) in data.items():
     xs = np.linspace(v['start'] * 2 * np.pi, v['end'] * 2 * np.pi, 200)
     ys = np.array([(1.0 + v['offset']) for x in xs])
 
-    ax.plot(xs, ys, linewidth=LW, label=v['name'])
+    ax.plt(xs, ys, linewidth=LW, label=v['name'])
 
 _inner_lim = 0.5  # keep this below the value for the main circle at 1.0
 _outer_lim = 1.3  # adjust to include all plotted segments
