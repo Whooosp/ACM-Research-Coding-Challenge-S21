@@ -13,7 +13,7 @@ Please follow the below instructions on how to submit your answers.
 3. Complete the Challenge based on the instructions below.
 4. Submit your solution by filling out this [form](https://acmutd.typeform.com/to/uqAJNXUe).
 
-## Question One
+~~~~## Question One
 
 Genome analysis is the identification of genomic features such as gene expression or DNA sequences in an individual's genetic makeup. A genbank file (.gb) format contains information about an individual's DNA sequence. The following dataset in `Genome.gb` contains a complete genome sequence of Tomato Curly Stunt Virus. 
 
