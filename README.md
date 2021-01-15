@@ -23,18 +23,18 @@ Genome analysis is the identification of genomic features such as gene expressio
 
 Regardless if you can or cannot answer the question, provide a short explanation of how you got your solution or how you think it can be solved in your README.md file. However, we highly recommend giving the challenge a try, you just might learn something new!
 
-##Important
+## Important
 Map.py is the main file, parse.py holds helper functions to parse the Genbank file
 
 Also, green clockwise arrows represent genes on the main strand, read normally, while
 read counter-clockwise arrows represent genes on the complementary strand, read in
 'reverse'
 
-##Libraries used
+## Libraries used
 Biopython
 matplotlib
 
-##References
+## References
 https://gist.github.com/peterk87/5422267
 
 Used for reference on how to parse genbank file using biopython
@@ -43,7 +43,7 @@ https://stackoverflow.com/questions/62706502/circular-visualization-in-python-wi
 
 Answer by Asmus used as reference for how to create the offset with stacked genes
 
-##How I got my solution
+## How I got my solution
 When first looking at the problem, I had to deal with the initial obstacle of trying to figure out what a circular genome map was.
 Surprisingly, this proved more difficult than the code itself as sifting through documentation on what _specifically_ a circular genome map must include was a lot harder than I initially anticipated.
 Once I found adequate information on what a circular genome map generally included (and also cross-examined it with the information given in
