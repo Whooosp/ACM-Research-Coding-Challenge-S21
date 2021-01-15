@@ -25,3 +25,11 @@ def get_source(filename):
     for rec in recs:
         source = next(feat for feat in rec.features if feat.type == "source")
         return source
+
+
+def get_locus(filename):
+    recs = [rec for rec in SeqIO.parse(filename, "genbank")]
+
+    for rec in recs:
+        locus = rec.name
+        return locus

@@ -2,12 +2,13 @@ import os
 import matplotlib.transforms
 import numpy as np
 import matplotlib.pyplot as plt
-from parse import parse, get_source
+from parse import parse, get_source, get_locus
 
 features = parse("Genome.gb")
 source = get_source("Genome.gb")
-
-print(source.qualifiers.get('organism')[0])
+locus = get_locus("Genome.gb")
+# print(source.qualifiers.get('organism')[0])
+# print(get_locus("Genome.gb"))
 
 data = {}
 startPoint = 0
@@ -58,7 +59,7 @@ for (k, v) in data.items():
     print(v['dir'])
     # if the gene is read on the normal strand, make a green clockwise arrow
     # else if the gene is read on the complementary strand (and therefore in reverse)
-    # make a read counter-clockwise arrow
+    # make a red counter-clockwise arrow
     if v['dir'] > 0:
         ax.arrow(xs[100], ys[100], xs[105]-xs[100], ys[105]-ys[100], fc='g', ec='g', head_width=.1, head_length=.1)
     else:
@@ -76,13 +77,13 @@ for (k, v) in data.items():
 ax.set_xticks([])
 ax.set_yticks([0, 1], minor=False)
 ax.set_yticklabels(('', '$source$'))
-labeloffset = matplotlib.transforms.ScaledTranslation(-1, .2, fig.dpi_scale_trans)
+labeloffset = matplotlib.transforms.ScaledTranslation(-.9, .2, fig.dpi_scale_trans)
 for label in ax.yaxis.get_majorticklabels():
     label.set_transform(label.get_transform() + labeloffset)
 
 ax.legend(loc='lower left', bbox_to_anchor=(-.4, -.1))
 ax.spines['polar'].set_visible(False)
 plt.title(source.qualifiers.get('organism')[0], loc='center', pad=10)
-plt.show()
+plt.savefig(locus + '.jpeg')
 plt.close()
 exit(0)
