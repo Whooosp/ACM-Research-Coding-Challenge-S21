@@ -15,7 +15,7 @@ def parse(filename):
     recs = [rec for rec in SeqIO.parse(filename, "genbank")]
 
     for rec in recs:
-        feats = [feat for feat in rec.features if feat.type == "gene"]
+        feats = [feat for feat in rec.features if feat.type == "CDS"]
         return feats
 
 
