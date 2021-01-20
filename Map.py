@@ -42,7 +42,7 @@ for (k, v) in data.items():
     dist = 1.0 + offset
     ys = np.array([(dist) for x in xs])
     p = ax.plot(xs, ys, linewidth=3, label=v['name'])
-    print(v['dir'])
+    #print(v['dir'])
     # if the gene is read on the normal strand, make a green clockwise arrow
     # else if the gene is read on the complementary strand (and therefore in reverse)
     # make a red counter-clockwise arrow
